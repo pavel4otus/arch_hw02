@@ -1,9 +1,11 @@
 package ru.pavel2107.arch.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class SendMessageImpl implements SendMessage {
 
     private PushService  pushService;
@@ -17,17 +19,17 @@ public class SendMessageImpl implements SendMessage {
 
 
     @Override
-    public void send(String destination, Map<String, Object> properties) {
+    public void send(String destination, Map<String, String> properties) {
         switch ( destination){
            case "push":
-               String phone      = (String) properties.get( "phone");
-               String message    = (String) properties.get( "message");
+               String phone      = properties.get( "phone");
+               String message    = properties.get( "message");
                pushService.push( phone, message);
                break;
             case "email":
-                String to      = (String) properties.get( "to");
-                String subject = (String) properties.get( "subject");
-                String text    = (String) properties.get( "text");
+                String to      = properties.get( "to");
+                String subject = properties.get( "subject");
+                String text    = properties.get( "text");
                 emailService.send( to, subject, text);
                 break;
         }

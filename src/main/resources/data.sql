@@ -72,6 +72,7 @@ insert into statuses( id, code, name) values(  9, 'DELIVERED', 'Доставле
 insert into statuses( id, code, name) values( 10, 'RECEIVED', 'Получен клиентом');
 insert into statuses( id, code, name) values( 11, 'CANCELED', 'Отменен');
 
+
 --
 -- пользователи пароль у всех 12345
 --
