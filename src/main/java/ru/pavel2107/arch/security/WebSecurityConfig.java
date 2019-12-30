@@ -31,9 +31,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .headers().frameOptions().disable()
                 .and()
-
+                .logout()
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .and()
                 .authorizeRequests()
-                    .antMatchers( "/").permitAll()
+
                     .antMatchers( "/h2-console").permitAll()
                     //
                     // страны могут просматривать все, изменять только админ
