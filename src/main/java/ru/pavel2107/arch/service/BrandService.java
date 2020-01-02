@@ -8,8 +8,7 @@ public interface BrandService {
     Brand save(Brand brand);
     void delete( Long id);
     Brand find( Long id);
+    Brand findByCode( String code);
     List<Brand> findByName( String name);
-    List<Brand> findByCountryName( String name);
-    List<Brand> findByCountryCode( String code);
     List<Brand> findAll();
 }

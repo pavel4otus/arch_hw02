@@ -25,8 +25,7 @@ public class Order {
     @JsonBackReference
     private User user;
 
-    @OneToOne
-    private Address deliveryAddress;
+    private String deliveryAddress;
 
     @OneToMany( mappedBy = "order", fetch = FetchType.LAZY)
     private Set<StatusHistory> history = new HashSet<>();

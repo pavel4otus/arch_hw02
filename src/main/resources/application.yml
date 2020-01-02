@@ -6,6 +6,19 @@ spring:
     username: sa
     password:
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: user@gmail.com
+    password: password
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+
+
   jpa:
     show-sql: true
     hibernate:
@@ -23,4 +36,10 @@ spring:
 server:
   port: 8082
 
+
+app:
+  push:
+    account_sid: ACffb38145b9c140cbcbff160dc18bfd1e
+    auth_token: 33480ce54329c95467b57dceda3e6d07
+    twilio_number: +12403292300
 

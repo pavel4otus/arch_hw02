@@ -22,6 +22,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User registerNewUser(User user) throws Exception {
+        user.setOrders( null);
+        user.setRole( "ROLE_USER");
         return repository.save( user);
     }
 

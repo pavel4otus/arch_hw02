@@ -1,11 +1,13 @@
 package ru.pavel2107.arch.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.pavel2107.arch.domain.Brand;
 import ru.pavel2107.arch.repository.BrandRepo;
 
 import java.util.List;
 
+@Service
 public class BrandServiceImpl implements BrandService {
 
     private BrandRepo repository;
@@ -35,18 +37,13 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public List<Brand> findByCountryName(String name) {
-        return repository.findByCountryName( name);
-    }
-
-    @Override
-    public List<Brand> findByCountryCode(String code) {
-        return repository.findByCountryCode( code);
-    }
-
-    @Override
     public Brand find(Long id) {
         return repository.findById( id).orElse( null);
+    }
+
+    @Override
+    public Brand findByCode(String code) {
+        return repository.findByCode( code);
     }
 
     @Override

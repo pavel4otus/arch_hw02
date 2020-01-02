@@ -21,13 +21,11 @@ public class Brand {
     @Column( name = "name")
     String name;
 
+    @Column( name = "code")
+    private String code;
+
     @Column( name = "description")
     String description;
-
-    @ManyToOne
-    @JoinColumn( name = "country_id")
-    @JsonIgnore
-    private Country country;
 
     @Column( name = "logo")
     String logoUrl;

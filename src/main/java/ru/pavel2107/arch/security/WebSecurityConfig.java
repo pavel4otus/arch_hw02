@@ -38,12 +38,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
                     .antMatchers( "/h2-console").permitAll()
-                    //
-                    // страны могут просматривать все, изменять только админ
-                    //
-                    .antMatchers( HttpMethod.GET, "/rest/country").permitAll()
-                    .antMatchers( HttpMethod.DELETE, "/rest/country").hasRole( "ADMIN")
-                    .antMatchers( HttpMethod.PUT, "/rest/country").hasRole( "ADMIN")
+                //
+                // бренды могут просматривать все, изменять только админ
+                //
+                .antMatchers( HttpMethod.GET, "/rest/brands").permitAll()
+                .antMatchers( HttpMethod.DELETE, "/rest/brands").hasRole( "ADMIN")
+                .antMatchers( HttpMethod.PUT, "/rest/brands").hasRole( "ADMIN")
+                //
+                // бренды могут просматривать все, изменять только админ
+                //
+                .antMatchers( HttpMethod.GET, "/rest/categories").permitAll()
+                .antMatchers( HttpMethod.DELETE, "/rest/categories").hasRole( "ADMIN")
+                .antMatchers( HttpMethod.PUT, "/rest/categories").hasRole( "ADMIN")
                     //
                     // товары могут просматривать все, изменять только admin
                     //

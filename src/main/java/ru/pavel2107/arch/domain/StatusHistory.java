@@ -29,7 +29,5 @@ public class StatusHistory {
     @JsonIgnore
     private Order order;
 
-    @ManyToOne
-    @JoinColumn( name = "address_id")
-    private Address address;
+    private String address;
 }
