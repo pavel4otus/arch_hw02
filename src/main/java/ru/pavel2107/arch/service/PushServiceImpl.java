@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-import static sun.plugin2.os.windows.FLASHWINFO.create;
 
 @Service
 @Configuration

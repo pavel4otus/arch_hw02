@@ -3,6 +3,8 @@ services:
    myapp:
       ports:
       - 8082:8082
+      volumes:
+        - ./config:/config
       build:
         context: .
         dockerfile: Dockerfile.app
